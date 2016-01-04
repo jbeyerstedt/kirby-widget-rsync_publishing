@@ -12,6 +12,7 @@ For copying the staging content to the live site, you could use shell scripts, F
 - latest version of kirby, toolkit and panel. This widget was created with kirby v2.2.3.
 - linux server with `rsync`
 - php, which is allowed to execute shell commands by `shell_exec`
+- both, staging and production site MUST BE ON THE SAME SERVER!!! (in this version)
 
 ## how to use
 This widget uses `rsync` in the unix bash, so `rsync` must be availible and the php command `shell_exec` must not be blocked.  
