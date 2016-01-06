@@ -25,10 +25,10 @@ $rsync_script = '';
 $stagingcontent_path = kirby()->roots()->content();
 $stagingcontent_path .= '/';
 $productioncontent_path = $stagingcontent_path . '../../';
-$productioncontent_path .= c::get('rsync_publishing.publicsite_folder');
+$productioncontent_path .= c::get('rsync_publishing.publicSite_folder');
 $productioncontent_path .= '/content/';
 
-$rsync_options = c::get('rsync_publishing.rsync_options', '-rlptz -u -v --delete');
+$rsync_options = c::get('rsync_publishing.rsyncOptions', '-rlptz -u -v --delete');
 
 if ($get_param !== null) {
   switch ($get_param) {
@@ -87,7 +87,7 @@ if ($get_param !== null) {
 </div>
 
 <div class="dashboard-box">
-  <a class="dashboard-item" href="<?php echo c::get('rsync_publishing.site') ?>" target="_blank">
+  <a class="dashboard-item" href="<?php echo c::get('rsync_publishing.publicSite_url') ?>" target="_blank">
     <figure>
       <span class="dashboard-item-icon dashboard-item-icon-with-border"><i class="fa fa-globe"></i></span>
       <figcaption class="dashboard-item-text"><?php echo $strings[$lang]['butt_showsite'] ?></figcaption>

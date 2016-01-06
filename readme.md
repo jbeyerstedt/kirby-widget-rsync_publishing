@@ -47,11 +47,11 @@ To configure this widget, these options must be set in the `site/config/config.p
 
 ```
 // url of public site, just for a shortlink
-c::set('rsync_publishing.site', 'http://test.naturfreunde-hh.de');
+c::set('rsync_publishing.publicSite_url', 'http://yourPublicSite.url');
 // public site foldername, must be at same level as staging site
-c::set('rsync_publishing.publicsite_folder', 'public_site');
+c::set('rsync_publishing.publicSite_folder', 'public_site');
 // set your own rsync parameters. Will override all default parameters
-c::set('rsync_publishing.rsync_options','-rlptz -u -v --delete');
+c::set('rsync_publishing.rsyncOptions','-rlptz -u -v --delete');
 ```
 
 ### usage
