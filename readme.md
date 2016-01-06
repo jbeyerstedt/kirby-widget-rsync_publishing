@@ -25,7 +25,12 @@ To work proberly, the root folders of the staging and production site must be in
 +-- staging_of_public_site/
 |   +-- content/
 |   +-- [...]
++-- secondary_preview_site/
+|   +-- content/
+|   +-- [...]
 ```
+
+The `secondary_preview_site` is optional. Some users have a staging site for development, a preview (secondary) site for review and the live site. So this use case will be covered as well.
 
 ### Installation
 To install this widet, store this all these files in
@@ -52,6 +57,12 @@ c::set('rsync_publishing.publicSite_url', 'http://yourPublicSite.url');
 c::set('rsync_publishing.publicSite_folder', 'public_site');
 // set your own rsync parameters. Will override all default parameters
 c::set('rsync_publishing.rsyncOptions','-rlptz -u -v --delete');
+
+// optionally enable another sync location
+c::set('rsync_publishing.secondarySite_enable', true);
+c::set('rsync_publishing.secondarySite_url', 'http://preview.your.url');
+c::set('rsync_publishing.secondarySite_folder', 'secondary_preview_site');
+
 ```
 
 ### usage

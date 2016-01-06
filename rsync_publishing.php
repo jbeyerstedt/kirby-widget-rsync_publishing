@@ -1,4 +1,11 @@
 <?php
+// -------------------------------------------
+// kirby widget rsync_publishing
+//
+// copyright: Jannik Beyerstedt | http://jannikbeyerstedt.de | code@jannikbeyerstedt.de
+// license: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
+// -------------------------------------------
+
 
 // languages
 $lang = panel()->user()->language();
