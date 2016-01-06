@@ -59,12 +59,16 @@ if ($get_param !== null) {
 ?>
 
 <style>
-#rsync_publishing-widget > pre {
+#rsync_publishing-widget > div.code {
   font-family: monospace;
   background: #efefef;
   padding: 1em;
   margin: 1em 0px 1em;
   white-space: pre-wrap;
+  
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 #rsync_publishing-widget p {
   line-height: 1.5em;
@@ -75,7 +79,7 @@ if ($get_param !== null) {
 
 <p><?php echo $strings[$lang]['text_intro'] ?></p>
 
-<pre><?php echo $rsync_script ?></pre>
+<div class="code"><?php echo $rsync_script ?></div>
 
 <div class="dashboard-box">
   <a class="dashboard-item" href="<?php echo panel()->site()->url() ?>/panel?widget_rsyncpublishing=test">
@@ -98,7 +102,7 @@ if ($get_param !== null) {
 <?php else : ?>
 
 <p><?php echo $strings[$lang]['text_script'] ?></p>
-<pre><?php echo $output ?></pre>
+<div class="code"><?php echo $output ?></div>
 
 <?php if ($get_param == 'test') : ?>
 
