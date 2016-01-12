@@ -105,8 +105,8 @@ if ($get_param !== null) {
   background: #efefef;
   padding: 1em;
   margin: 1em 0px 1em;
-  white-space: pre-wrap;
-  
+  white-space: pre;
+
   max-height: 400px;
   overflow-y: scroll;
   overflow-x: auto;
