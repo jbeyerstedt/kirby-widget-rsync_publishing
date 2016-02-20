@@ -57,28 +57,28 @@ if ($get_param !== null) {
       $rsync_script .= ' '.$productionContent_path;
       $output = shell_exec($rsync_script);
       break;
-      
+
     case "test":
       $rsync_script = 'rsync ' . $rsync_options . ' --dry-run';
       $rsync_script .= ' '.$stagingContent_path;
       $rsync_script .= ' '.$productionContent_path;
       $output = shell_exec($rsync_script);
       break;
-      
+
     case "secondary_run":
       $rsync_script = 'rsync ' . $rsync_options;
       $rsync_script .= ' '.$stagingContent_path;
       $rsync_script .= ' '.$secondaryContent_path;
       $output = shell_exec($rsync_script);
       break;
-      
+
     case "secondary_test":
       $rsync_script = 'rsync ' . $rsync_options . ' --dry-run';
       $rsync_script .= ' '.$stagingContent_path;
       $rsync_script .= ' '.$secondaryContent_path;
       $output = shell_exec($rsync_script);
       break;
-      
+
 
     default :
       $output = "something went wrong!!!";
@@ -88,7 +88,7 @@ if ($get_param !== null) {
   $rsync_script = 'rsync ' . $rsync_options . ' --dry-run';
   $rsync_script .= ' '.$stagingContent_path;
   $rsync_script .= ' '.$productionContent_path;
-  
+
   if ($secondary_enable == true) {
     $secondary_rsync_script = 'rsync ' . $rsync_options . ' --dry-run';
     $secondary_rsync_script .= ' '.$stagingContent_path;
@@ -174,9 +174,10 @@ p.secondary {
 <div class="code"><?php echo $output ?></div>
 
 <?php if ($get_param == 'test' || $get_param == 'secondary_test') : ?>
+<?php $get_target = ($get_param == 'test') ? 'run' : 'secondary_run' ?>
 
 <div class="dashboard-box">
-  <a class="dashboard-item" href="<?php echo panel()->site()->url() ?>/panel?widget_rsyncpublishing=run">
+  <a class="dashboard-item" href="<?php echo panel()->site()->url() ?>/panel?widget_rsyncpublishing=<?php echo $get_target ?>">
     <figure>
       <span class="dashboard-item-icon dashboard-item-icon-with-border"><i class="fa fa-exchange"></i></span>
       <figcaption class="dashboard-item-text"><?php echo $strings[$lang]['butt_publish'] ?></figcaption>
