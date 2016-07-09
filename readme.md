@@ -1,20 +1,23 @@
-# kirby panel widget rsync publishing  
+# kirby CMS - panel widget: rsync publishing  
 by Jannik Beyerstedt from Hamburg, Germany  
 [jannikbeyerstedt.de](http://jannikbeyerstedt.de) | [Github](https://github.com/jbeyerstedt)  
+**license:** GNU GPL v3
 
-
-## publish your content from staging to live site with just one click
+## Introduction
+**publish your content from staging to live site with just one click**
 
 In kirby CMS it´s not possible to preview content changes, so you need a staging server (kirby installation), when you will or can not edit the content only on your localhost.  
 For copying the staging content to the live site, you could use shell scripts, FTP, or something more complicated. But with this panel widget syncing is only one button to click in the kirby panel.
 
-## requirements:
+## User Manual
+
+### Requirements:
 - latest version of kirby, toolkit and panel. This widget was created with kirby v2.2.3.
 - linux server with `rsync`
 - php, which is allowed to execute shell commands by `shell_exec`
 - both, staging and production site MUST BE ON THE SAME SERVER!!! (in this version)
 
-## how to use
+### How to Use
 This widget uses `rsync` in the unix bash, so `rsync` must be availible and the php command `shell_exec` must not be blocked.  
 To work proberly, the root folders of the staging and production site must be in the same directory. So the folder structure is like this:
 
@@ -32,7 +35,7 @@ To work proberly, the root folders of the staging and production site must be in
 
 The `secondary_preview_site` is optional. Some users have a staging site for development, a preview (secondary) site for review and the live site. So this use case will be covered as well.
 
-### Installation
+#### Installation
 To install this widet, store this all these files in
 
 ```
@@ -47,7 +50,7 @@ git submodule add https://github.com/jbeyerstedt/kirby-widget-rsync_publishing .
 
 Currently the use of this widget is limited to users with the role `admin`.
 
-### options to set
+#### Options to Set
 To configure this widget, these options must be set in the `site/config/config.php` file:
 
 ```
@@ -65,9 +68,9 @@ c::set('rsync_publishing.secondarySite_folder', 'secondary_preview_site');
 
 ```
 
-### usage
+#### Usage
 This widget displays the shell command, which will be executed first. With the first click on "preview changes", `rsync` performs a dry run first. After that, the changes will be copied with  the button "publish changes".
 
 
-## contribution
-Feel free to fork this repository an make it better.
+## Contribution
+Feel free to fork this repository and make it better.
